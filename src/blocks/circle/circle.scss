@@ -1,0 +1,76 @@
+// В этом файле должны быть стили для БЭМ-блока circle, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.circle {
+
+  $block-name: &; // #{$block-name}__element {}
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  color: white;
+  font-size: 40px;
+  transition: all 600ms;
+  cursor: pointer;
+
+  &:hover {
+    #{$block-name} {
+      &__wrapper {
+        width: 52px;
+        height: 52px;
+        padding: 0;
+      }
+    }
+  }
+
+  &__wrapper {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $color-main;
+    border-radius: 50%;
+    padding: 9px;
+    transition: all 600ms;
+  }
+
+  &__block {
+    width: 100%;
+    height: 100%;
+    background-color: $color-main;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 600ms;
+  }
+
+  &--big {
+    width: 115px;
+    height: 115px;
+
+    &:hover {
+      #{$block-name} {
+        &__block {
+          font-size: 43px;
+        }
+      }
+    }
+
+    #{$block-name} {
+      &__wrapper {
+        width: 115px;
+        height: 115px;
+        padding: 16px;
+      }
+
+      &__block {
+        font-size: 63px;
+      }
+    }
+  }
+}

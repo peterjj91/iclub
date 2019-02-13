@@ -1,0 +1,178 @@
+// В этом файле должны быть стили для БЭМ-блока fullpage, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+@import url("../../node_modules/fullpage.js/dist/fullpage.css");
+
+.section {
+  z-index: 1;
+
+  .container {
+    padding: 0;
+  }
+
+  &__big {
+    position: absolute;
+    background-image: url("../img/main-background4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media(min-width: $screen-xxl) {
+      background-position: center left;
+    }
+  }
+}
+
+#screen2 {
+  //background-color: #fff;
+}
+
+#screen4 {
+  background-image: url(img/background-shadow.png);
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 50% 100%;
+
+  .fp-tableCell {
+    vertical-align: bottom;
+  }
+}
+
+#screen5 {
+  background-color: #1c756f;
+}
+
+#screen6 {
+  background-color: white;
+}
+
+#screen8 {
+  background-color: white;
+}
+
+#screen9 {
+  background-color: #e8e4e5;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: url("../img/background-review.png");
+    background-position: bottom center;
+    z-index: -1;
+    height: 403px;
+  }
+}
+
+#screen10 {
+  background-color: white;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 712px;
+    height: 100%;
+    z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: none;
+    background-position: center right -200px;
+
+    @media(min-width: 1700px) {
+      background-position: right center;
+    }
+    @media(min-width: $screen-xxl) {
+      background-position: center right -200px;
+    }
+    @media(min-width: $screen-lg) {
+      background-image: url("../img/background-contact.png");
+    }
+  }
+}
+
+.paralax {
+  position: absolute;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  pointer-events: none;
+  z-index: -1;
+
+  &__img {
+    img {
+      width: 150%;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  cursor: pointer;
+  transform: translate(-50%, 0%);
+  bottom: 50px;
+  left: 50%;
+  z-index: 1;
+
+  li {
+    display: none;
+
+    &.active {
+      & + li {
+        display: block;
+      }
+    }
+  }
+}
+
+.main-promo {
+  @extend .toLeftStart;
+}
+.slider-promo {
+  @extend .toLeftStart;
+}
+.fp-viewing-firstPage {
+  .main-promo {
+    @extend .toLeftEnd;
+  }
+}
+.fp-viewing-secondPage {
+  .slider-promo {
+    @extend .toLeftEnd;
+  }
+}
+
+.fp-viewing-6thpage {
+  .request__img--right {
+    @extend .toLeftEnd;
+  }
+
+  .request__img--left {
+    @extend .toRightEnd;
+  }
+}
+
+.fp-viewing-10thpage {
+  .page-footer {
+    &__map {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,176 @@
+// В этом файле должны быть стили для БЭМ-блока calculator-promo, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.calculator-promo {
+
+  $block-name:                &; // #{$block-name}__element {}
+
+  @media (max-width: $screen-xxl) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__info {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+
+    p {
+      font-size: 27px;
+      line-height: normal;
+      color: white;
+    }
+  }
+
+  &__title {
+    //color: $color-main;
+    font-size: 72px;
+    line-height: 72px;
+    margin-bottom: -6px;
+    color: white;
+  }
+
+  &__main {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    &__header {
+      .btn {
+        width: 100%;
+        padding: 7px 31px 2px 31px;
+        text-align: left;
+        font-size: 26px;
+        letter-spacing: 0.2px;
+        outline: none;
+        box-shadow: none;
+        background-color: #e8e7e9;
+        color: $color-main;
+
+        span {
+          display: inline-block;
+          vertical-align: middle;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            background-image: url(../img/drop-mini.png);
+            width: 16px;
+            height: 16px;
+            margin-left: 20px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    &__body {
+      .card-body {
+        padding: 22px 30px 35px 30px;
+        border: none;
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 22px;
+        border-bottom: 1px solid #f1f1f1;
+        margin-bottom: 35px;
+
+        &__block {
+          margin: 0px 29px;
+        }
+      }
+
+      &__content {
+        padding: 0;
+        list-style: none;
+        margin: 0;
+
+        li {
+          display: inline-block;
+          vertical-align: top;
+          width: 21.8%;
+          margin-bottom: 4px;
+        }
+
+        .custom-control-label {
+          font-size: 27px;
+          color: $color-main;
+        }
+      }
+
+      .custom-checkbox .custom-control-input:checked ~ .custom-control-label {
+        color: $color-warning;
+      }
+    }
+
+    &__total {
+      display: flex;
+
+      &__block {
+        flex: 1;
+      }
+
+      .table {
+        margin: 0;
+        height: 100%;
+
+        tbody {
+          tr {
+            &:first-child {
+              td {
+                vertical-align: middle;
+
+                &:first-child {
+                  padding-top: 38px;
+                  padding-bottom: 16px;
+                }
+              }
+            }
+          }
+        }
+
+        .active {
+          #{$block-name} {
+            &__main__circle {
+              background: $color-main--light;
+              color: white;
+            }
+          }
+        }
+      }
+
+      .custom-control {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+
+        &-label {
+          &:before, &:after {
+            background-color: $color-main--light;
+          }
+        }
+      }
+
+      .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+        background-color: $color-main--light;
+      }
+    }
+
+    &__circle {
+      display: inline-block;
+      vertical-align: middle;
+      width: 41px;
+      height: 41px;
+      border-radius: 50%;
+      background-color: #d8d0d0;
+      font-size: 26px;
+      color: $color-main--light;
+      overflow: hidden;
+      line-height: 40px;
+      text-align: center;
+    }
+  }
+}

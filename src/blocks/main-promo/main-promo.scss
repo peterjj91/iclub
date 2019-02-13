@@ -1,0 +1,60 @@
+// В этом файле должны быть стили для БЭМ-блока main-promo, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.main-promo {
+
+  $block-name: &; // #{$block-name}__element {}
+  //margin-top: 105px;
+  //margin-right: 28px;
+  padding-top: 201px;
+
+  &__line {
+    max-width: 1440px;
+    min-height: 340px;
+    margin: 0 auto;
+    margin-right: 0;
+    background: url(../img/main-promo-img1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 90px 300px 0px 20px;
+    text-align: right;
+
+    @media(min-width: $screen-xxl) {
+      padding-right: 392px;
+      padding-left: 100px;
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    line-height: 110px;
+    color: white;
+    margin-bottom: 19px;
+
+    @media(min-width: $screen-xxl) {
+      font-size: 133px;
+    }
+  }
+
+  &__btn-group {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+      //text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .btn-primary {
+      min-width: 420px;
+    }
+  }
+}

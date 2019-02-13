@@ -1,0 +1,33 @@
+
+// Make viewport responsive
+// http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+
+.page {
+  &__content {
+    //display: flex;
+    //flex-direction: column;
+    //height: 100%;
+  }
+
+  &__main-content {
+    flex: 1 0 auto;
+    position: relative;
+
+    @media(min-width: $screen-lg){
+
+    }
+  }
+
+  &__footer-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 20px;
+
+    @media(min-width: 1500px) {
+      padding: 20px 20px;
+      padding-top: 55px;
+      padding-bottom: 70px;
+    }
+  }
+}

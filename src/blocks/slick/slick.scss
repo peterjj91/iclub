@@ -1,0 +1,11 @@
+// В этом файле должны быть стили для БЭМ-блока slick, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+@import "../../../node_modules/slick-carousel/slick/slick.scss";
+
+.slick {
+
+  $block-name:                &; // #{$block-name}__element {}
+
+}

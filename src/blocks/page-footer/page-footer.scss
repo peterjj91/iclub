@@ -1,0 +1,306 @@
+// В этом файле должны быть стили только для БЭМ-блока page-header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+
+.page-footer {
+  $block-name: &;
+  height: 100%;
+
+  @media(min-width: $screen-lg) {
+
+  }
+
+  &-wrapper {
+    flex: 0 0 auto;
+  }
+
+  &__inner {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    padding: 22px 0px 0px 0px;
+    position: relative;
+
+    @media(min-width: $screen-xl){
+      padding-left: 112px;
+    }
+    @media(min-width: $screen-lg){
+      padding-right: 210px;
+      padding-left: 50px;
+    }
+
+    &:after {
+      content: '';
+      @media(min-width: $screen-lg){
+        position: absolute;
+        right: 155px;
+        top: 0;
+        background-image: url("../img/background-line2.png");
+        background-repeat: no-repeat;
+        width: 72px;
+        height: 772px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__map {
+    flex: 0 0 55.3%;
+    padding-top: 65px;
+    position: relative;
+
+    transition: all 200ms;
+    transform: translate(-200px, 0);
+    opacity: 0;
+
+    &__frame {
+      height: 300px;
+      width: 100%;
+      box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.18);
+      padding: 10px 10px 10px 10px;
+
+      @media(min-width: $screen-lg) {
+        height: 100%;
+      }
+    }
+  }
+
+  &__nav {
+    width: 100%;
+    padding: 0;
+    margin-top: 0;
+    margin-left: -1px;
+    margin-right: -1px;
+    margin-bottom: 0;
+    list-style: none;
+
+    @media(min-width: $screen-md) {
+      position: absolute;
+      display: flex;
+      top: 0;
+      left: 0;
+      height: 54px;
+    }
+
+    li {
+      width: 100%;
+      margin: 0px 1px;
+
+      @media(min-width: $screen-md) {
+        flex: 1;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        background-color: #1c756f;
+        color: white;
+        height: 100%;
+        font-size: 20px;
+        padding: 12px 10px 7px 10px;
+        line-height: 31px;
+
+        @media(min-width: $screen-xl) {
+          font-size: 30px;
+        }
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 50px;
+    line-height: 50px;
+    color: #1c756f;
+    margin-bottom: 36px;
+
+    @media(min-width: $screen-md) {
+      font-size: 100px;
+      line-height: 100px;
+    }
+  }
+
+  &__adress {
+    margin-left: -30px;
+    padding: 18px 20px 17px 30px;
+    color: #1c756f;
+    background: rgba(254,254,254,1);
+    background: linear-gradient(to right, rgba(254,254,254,1) 0%, rgba(244,240,241,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f4f0f1', GradientType=1 );
+    margin-bottom: 8px;
+
+    @media(min-width: $screen-xl){
+      margin-left: -110px;
+      padding-left: 112px;
+    }
+  }
+
+  p {
+    margin-bottom: 5px;
+    color: #1c756f;
+    font-size: 27px;
+    line-height: 27px;
+  }
+
+  mark {
+    color: #af2f44;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  &__consultation {
+    margin-bottom: 21px;
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    span {
+      font-family: $akrobat-regular;
+      font-size: 16px;
+      line-height: 16px;
+    }
+
+    &__mini {
+      font-family: $akrobat-regular;
+      padding-top: 3px;
+      text-align: center;
+
+      p {
+        font-size: 16px;
+        line-height: 16px;
+        margin-bottom: -3px;
+
+        &.mark {
+          background-color: transparent;
+          padding: 0;
+          color: #cccccc;
+        }
+      }
+
+      mark {
+
+      }
+    }
+  }
+
+  &__tel {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 13px 13px 11px 75px;
+
+    border-top: 1px solid #e8e4e5;
+    border-bottom: 1px solid #e8e4e5;
+    border-right: 1px solid #e8e4e5;
+    position: relative;
+
+    @media(min-width: $screen-lg){
+      width: 333px;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      transform: translate(0%, -50%);
+      top: 50%;
+      left: -8px;
+      background-image: url("../img/icon-contact.png");
+      width: 68px;
+      height: 68px;
+    }
+
+    li {
+      display: block;
+      font-size: 26px;
+      line-height: 26px;
+      margin-bottom: 6px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      font-size: 26px;
+      line-height: 26px;
+      color: #2e747a;
+      margin-right: 20px;
+
+      &:hover, &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__line {
+    width: 100%;
+    height: 1px;
+    background: #f1f1f1;
+    margin-bottom: 20px;
+  }
+
+  &__social {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+
+    @media(min-width: $screen-lg){
+      position: absolute;
+      top: 174px;
+      right: 130px;
+    }
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+
+      @media(min-width: $screen-lg){
+        display: block;
+        margin-bottom: 12px;
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+
+  &__vk {
+    background-image: url("../img/icon-vk.png");
+    width: 31px;
+    height: 17px;
+
+    &:hover {
+      background-image: url("../img/icon-vk-active.png");
+    }
+  }
+
+  &__inst {
+    background-image: url("../img/icon-instagram.png");
+    width: 30px;
+    height: 30px;
+
+    &:hover {
+      background-image: url("../img/icon-instagram-active.png");
+    }
+  }
+}

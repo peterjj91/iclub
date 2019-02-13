@@ -1,0 +1,124 @@
+// В этом файле должны быть стили для БЭМ-блока about, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.about {
+
+  $block-name: &; // #{$block-name}__element {}
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    background-image: url("../img/background-about1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__block {
+    padding: 20px;
+
+    @media(min-width: $screen-lg){
+      width: 50%;
+      display: inline-block;
+      vertical-align: top;
+      padding: 27px 50px;
+    }
+
+    &__wrapper {
+      font-size: 0;
+    }
+  }
+
+  &__title {
+    color: #1c756f;
+    font-size: 100px;
+    line-height: 100px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  &__description {
+    font-size: 27px;
+    line-height: 31px;
+    color: #1c756f;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  &__info {
+    .dropdown-main {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  &__person {
+    margin-top: 45px;
+    padding: 0px 17px;
+    background-image: url("../img/profile-line.png");
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: contain;
+    margin-bottom: 18px;
+
+    @media(min-width: $screen-xl){
+      display: flex;
+      align-items: center;
+    }
+
+    &__img {
+      position: relative;
+      margin-right: 54px;
+      //overflow: hidden;
+
+      img {
+        width: 240px;
+        background-color: #e6e5e3;
+        border-radius: 50%;
+        box-shadow: -2px -2px 4px 0px rgba(0,0,0,0.18);
+      }
+    }
+
+    &__title {
+      font-size: 27px;
+      color: #af2f44;
+      line-height: normal;
+    }
+
+    &__name {
+      font-size: 27px;
+      padding-bottom: 6px;
+      color: #1c756f;
+      line-height: normal;
+      margin-left: -10px;
+      padding-left: 10px;
+      margin-right: -10px;
+      padding-right: 10px;
+      border-bottom: 1px solid black;
+    }
+
+    &__text {
+      margin: 7px -15px 0px -15px;
+      padding: 0px 15px;
+      font-family: $akrobat-regular;
+      font-size: 14px;
+      line-height: normal;
+      color: #1c756f;
+
+      p {
+        color: #1c756f;
+        margin: 0;
+      }
+
+      mark {
+        color: #af2f44;
+        background-color: transparent;
+        padding: 0;
+      }
+    }
+  }
+}

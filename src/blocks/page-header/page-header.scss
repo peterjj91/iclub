@@ -1,0 +1,53 @@
+// В этом файле должны быть стили только для БЭМ-блока page-header, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+
+.page-header {
+  $block-name: &;
+  position: absolute;
+  height: 200px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 1;
+  padding-top: 21px;
+  padding-bottom: 21px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @media(max-width: $screen-lg){
+
+  }
+  @media(min-width: $screen-xxl){
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__container {
+    @extend .container;
+  }
+
+  &__inner {
+    @media(min-width: $screen-lg){
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    text-align: center;
+
+    @media(max-width: $screen-lg){
+
+    }
+    @media(min-width: $screen-lg){
+      flex: 1;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

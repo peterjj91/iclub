@@ -1,0 +1,62 @@
+// В этом файле должны быть стили для БЭМ-блока accordion, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.accordion {
+
+  $block-name:                &; // #{$block-name}__element {}
+
+  .card {
+    border: none;
+    border-bottom: 1px solid white !important;
+    border-radius: 0px;
+    overflow: visible;
+
+    &:nth-child(2n+1) {
+      .card-header {
+        .btn {
+          background-color: #36aba3;
+        }
+      }
+    }
+
+    .card-header {
+      padding: 0;
+      border: none;
+      margin: 0;
+
+      .btn {
+        display: block;
+        border: none;
+        background-color: #1c756f;
+        width: 100%;
+        padding: 8px 45px 7px 22px;
+        text-align: left;
+        letter-spacing: 1px;
+        font-size: 41px;
+        line-height: normal;
+        color: white;
+        border-radius: 0px;
+
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .card-body {
+      padding: 27px 2px 23px 5px;
+      font-size: 14px;
+      line-height: 17px;
+      font-family: $akrobat-regular;
+      color: $color-main;
+
+      .mark {
+        color: $color-danger;
+        text-transform: uppercase;
+        padding: 0;
+        background: transparent;
+      }
+    }
+  }
+}

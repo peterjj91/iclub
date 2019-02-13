@@ -1,0 +1,190 @@
+// В этом файле должны быть стили только для БЭМ-блока table, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Не пишите здесь другие селекторы.
+
+
+
+.table {
+
+  $block-name: &; // #{$block-name}__element {}
+  background-color: #fff;
+
+  tr {
+    td {
+      color: #1c756f;
+    }
+  }
+
+  &-hover {
+    tbody {
+      tr {
+        &:hover {
+          background-color: rgba(54, 171, 163, 0.15);
+
+          td {
+            &:last-child {
+              background-color: #c8e7e5;
+              //font-size: 46px;
+              //text-align: center;
+              //line-height: 45px;
+            }
+          }
+        }
+
+        td {
+          padding: 9px 28px 7px 28px;
+          border: none;
+          min-height: 59px;
+          line-height: 41px;
+
+          &:last-child {
+            background-color: #e1f2f1;
+            text-align: center;
+            padding-top: 15px;
+          }
+
+          &.active + td {
+            font-size: 46px;
+            line-height: 57px;
+            padding-top: 6px;
+            padding-bottom: 0px;
+            color: $color-main;
+          }
+        }
+      }
+    }
+  }
+
+  &__select {
+    &:hover {
+      thead {
+        td {
+          background-color: $color-warning;
+          color: white;
+        }
+      }
+    }
+
+    thead {
+      td {
+        border: none;
+        //color: white;
+        background-color: #e8e7e9;
+        //color: $color-main--light;
+        padding: 7px 27px 2px 27px;
+        font-size: 27px;
+
+        &:last-child {
+          width: 198px;
+          text-align: center;
+          padding-top: 6px;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          &:last-child {
+            font-size: 27px;
+          }
+        }
+      }
+    }
+  }
+
+  &__total {
+    &:hover {
+      thead {
+        tr {
+          td {
+            background-color: $color-main--light;
+            color: white;
+          }
+        }
+      }
+    }
+
+    thead {
+      tr {
+        td {
+          padding: 7px 27px 2px 35px;
+          //background-color: #fff;
+          //color: $color-main--light;
+        }
+      }
+    }
+
+    tbody {
+      tr {
+        td {
+          border: none;
+          font-size: 27px;
+
+          &:first-child {
+            padding-left: 33px;
+            padding-top: 10px;
+            padding-bottom: 7px;
+            background-color: #f1f1f1;
+          }
+          &:last-child {
+            text-align: center;
+            padding-bottom: 0;
+          }
+        }
+
+        &:first-child {
+          td {
+            line-height: 31px;
+
+            &:first-child {
+
+            }
+
+            &:last-child {
+              padding-top: 26px;
+            }
+          }
+        }
+
+        &:last-child {
+          td {
+            padding-top: 0;
+            padding-bottom: 0;
+            vertical-align: bottom;
+            padding-right: 0;
+          }
+        }
+      }
+    }
+
+    &__main {
+      td {
+        padding-bottom: 0 !important;
+
+        &:last-child {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &__text {
+        margin-top: 14px;
+        border-top: 1px solid;
+        line-height: 27px;
+        padding-top: 24px;
+        padding-bottom: 23px;
+      }
+
+      .btn {
+        width: 100%;
+        height: 76px;
+        background: $color-main--light;
+        line-height: 68px;
+        font-size: 38px;
+        color: white;
+        border-radius: 0px;
+      }
+    }
+  }
+}

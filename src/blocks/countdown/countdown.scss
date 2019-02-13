@@ -1,0 +1,88 @@
+// В этом файле должны быть стили для БЭМ-блока countdown, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.is-countdown {
+
+}
+.countdown-rtl {
+  direction: rtl;
+}
+.countdown-holding span {
+
+}
+.countdown-row {
+  //clear: both;
+  display: flex;
+  width: 100%;
+  //padding: 0px 2px;
+  text-align: center;
+}
+.countdown-section {
+  position: relative;
+  margin-right: 30px;
+
+  &:after {
+    content: ':';
+    position: absolute;
+    top: 0;
+    right: -20px;
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 70px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+.countdown-show1 .countdown-section {
+  width: 98%;
+}
+.countdown-show2 .countdown-section {
+  width: 48%;
+}
+.countdown-show3 .countdown-section {
+  width: 32.5%;
+}
+.countdown-show4 .countdown-section {
+  width: 24.5%;
+}
+.countdown-show5 .countdown-section {
+  width: 19.5%;
+}
+.countdown-show6 .countdown-section {
+  width: 16.25%;
+}
+.countdown-show7 .countdown-section {
+  width: 14%;
+}
+.countdown-section {
+  display: block;
+  float: left;
+  font-size: 75%;
+  text-align: center;
+}
+.countdown-amount {
+  font-size: 73px;
+  line-height: 70px;
+}
+.countdown-period {
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+}
+.countdown-descr {
+  display: block;
+  width: 100%;
+}
+
+.countdown {
+
+  $block-name:                &; // #{$block-name}__element {}
+  color: $color-main;
+}

@@ -1,0 +1,91 @@
+// В этом файле должны быть стили для БЭМ-блока navbar, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.navbar {
+
+  $block-name: &; // #{$block-name}__element {}
+  padding: 0;
+  max-width: 1520px;
+  margin: 0 auto;
+
+  @media(min-width: $screen-xxl) {
+
+  }
+
+  &-brand {
+    padding: 0;
+    font-size: 22px;
+    color: $color-main;
+
+    a {
+      color: $color-main;
+
+      &:hover, &:focus {
+        color: $color-main;
+      }
+    }
+
+    p {
+      margin: 0;
+      margin-top: -2px;
+      line-height: normal;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 22px;
+  }
+
+  &__tel {
+    display: inline-block;
+    vertical-align: top;
+    line-height: normal;
+    margin-bottom: 4px;
+  }
+
+  &-nav {
+    font-size: 20px;
+    margin-top: -40px;
+
+    @media(min-width: $screen-xl) {
+      font-size: 24px;
+    }
+
+    li {
+      margin-left: 30px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.active {
+        .nav-link {
+          color: $color-main--accent;
+          padding-bottom: 0px;
+          border-bottom: 2px solid $color-main--accent;
+        }
+      }
+    }
+  }
+
+  &-collapse {
+    justify-content: flex-end;
+  }
+
+  &-expand-lg {
+    #{$block-name}-nav {
+      .nav-link {
+        padding-left: 0;
+        padding-right: 0;
+
+        @media(min-width: $screen-lg) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+
+    }
+  }
+}

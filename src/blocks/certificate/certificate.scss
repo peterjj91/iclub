@@ -1,0 +1,306 @@
+// В этом файле должны быть стили для БЭМ-блока certificate, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.certificate {
+
+  $block-name:                &; // #{$block-name}__element {}
+
+
+  @media(min-width: $screen-xl) {
+    display: flex;
+  }
+
+  &__block {
+    background-color: #fff;
+    text-align: center;
+    //flex: 1;
+    flex: 0 0 50%;
+    padding-top: 20px;
+    position: relative;
+
+    @media(min-width: $screen-xl) {
+      padding-top: 32px;
+    }
+
+    &--first {
+      #{$block-name} {
+        &__description {
+
+        }
+      }
+    }
+
+    &--second {
+      background-color: #1c756f;
+
+      #{$block-name} {
+        &__title {
+          color: white;
+        }
+
+        &__description {
+          .table {
+            tr {
+              td {
+                &:last-child {
+                  background-color: #1e7d77;
+                }
+              }
+            }
+          }
+        }
+
+        &__info {
+          background-color: #1c756f;
+        }
+      }
+
+      .btn {
+        display: none;
+      }
+    }
+
+    &.active {
+      background-color: #1c756f;
+
+      #{$block-name} {
+        &__title {
+          color: white;
+        }
+
+        &__description {
+          .table {
+            tr {
+              td {
+                &:last-child {
+                  background-color: #1e7d77;
+                }
+              }
+            }
+          }
+        }
+
+        &__info {
+          background-color: #1e7d77;
+        }
+      }
+
+      .btn-primary {
+        display: none;
+      }
+
+      & + .certificate__block {
+        background-color: white;
+
+        #{$block-name} {
+          &__title {
+            color: #1c756f;
+          }
+
+          &__description {
+            .table {
+              tr {
+                td {
+                  &:last-child {
+                    background-color: #e8e4e5;
+                  }
+                }
+              }
+            }
+          }
+
+          &__info {
+            background-color: #e8e4e5;
+          }
+        }
+
+        .btn {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: 100px;
+    color: #1c756f;
+    margin-bottom: 30px;
+  }
+
+  &__certificate {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px -40px;
+
+    @media(max-width: $screen-xxl) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    &__block {
+      transform: scale(0.75);
+      transition: all 400ms cubic-bezier(0.3, 0, 1, 1) 0s;
+
+      &:hover {
+        transform: scale(1);
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__slider {
+    height: 300px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    @media(max-width: $screen-xxl) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @media(min-width: $screen-xl) {
+      height: 395px;
+    }
+
+    .roundabout-carousel {
+      width: 500px;
+      margin: 0 auto;
+
+      @media(max-width: $screen-xxl) {
+        width: 300px;
+      }
+    }
+  }
+
+  &__description {
+    color: #8dbab7;
+    text-align: left;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    @media(max-width: $screen-xxl) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .table {
+      background-color: transparent;
+      border-top: 1px solid #8dbab7;
+
+      tr {
+        &:first-child {
+          td {
+            padding-top: 19px;
+          }
+        }
+
+        td {
+          border: none;
+          color: #8dbab7;
+          padding-top: 0;
+          padding-left: 0px;
+          padding-right: 0px;
+          padding-bottom: 9px;
+          font-size: 27px;
+          line-height: 27px;
+          
+          &:last-child {
+            width: 195px;
+            text-align: center;
+            background-color: #e8e4e5;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    height: 100%;
+    text-align: left;
+    color: #8dbab7;
+    padding: 27px 80px 27px 80px;
+    font-size: 27px;
+    line-height: normal;
+    background-color: #e8e4e5;
+
+    @media(max-width: $screen-xxl) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &__block {
+
+      margin-bottom: 7px;
+
+      @media(min-width: $screen-xl) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 0px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    p {
+      font-family: $akrobat-regular;
+      font-size: 14px;
+      color: #88b4b1;
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    top: 326px;
+    right: -26px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 200ms cubic-bezier(0.3, 0, 1, 1) 0s;
+
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 130px;
+    left: 0%;
+  }
+
+  .btn-primary {
+    background-color: white !important;
+    color: #1c756f;
+    padding: 16px 20px 12px 20px;
+    width: auto;
+    min-width: 256px;
+    font-size: 24px;
+    box-shadow: none;
+
+    &:before, &:after {
+      mix-blend-mode: normal;
+    }
+
+    &:hover, &:focus {
+      color: white;
+      background-color: #fff;
+
+      &:before, &:after {
+        background: #1c756f;
+      }
+    }
+  }
+}

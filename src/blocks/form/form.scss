@@ -1,0 +1,120 @@
+// В этом файле должны быть стили только для БЭМ-блока form, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, $media-условий...
+// Не пишите здесь другие селекторы.
+
+.form {
+  $block-name: &;
+
+  &-group {
+    margin-bottom: 13px;
+
+    &:last-child {
+      //margin-bottom: 0;
+    }
+
+    label {
+      width: 100%;
+    }
+  }
+
+  &-control {
+    height: calc(2.375rem + 2px);
+    padding: 0.438rem 0.75rem;
+    border-radius: 0px;
+    border: 1px solid #f1f1f1;
+    background-color: #f9f9f9;
+    color: #666666;
+
+
+    &:focus {
+      color: #666666;
+      background-color: #fff;
+      border-color: $color-main--gold;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(199, 155, 56, 0.25);
+    }
+  }
+
+  &-promo {
+    .bootstrap-select {
+      width: 100% !important;
+    }
+  }
+}
+
+.custom-control-label:before, .custom-control-label:after {
+  width: 31px;
+  height: 31px;
+  background-color: white;
+  border: 1px solid #f1f1f1;
+  top: 0;
+  left: -1.8rem;
+}
+
+.custom-control {
+  padding-left: 0px;
+}
+
+.custom-control-label {
+  font-size: 22px;
+  padding-left: 58px;
+  outline: none;
+  box-shadow: none !important;
+
+  &:before, &:after {
+    width: 31px;
+    height: 31px;
+    //border-radius: 0px;
+    background-color: white;
+    border: none;
+    box-shadow: -1px -1px 3px 0px rgba(0,0,0,0.18);
+    top: 2px;
+    left: 0px;
+    border-radius: 3px;
+  }
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-image: url(../img/check.png);
+  width: 31px;
+  height: 31px;
+  z-index: 1;
+  //background-color: transparent;
+  border: none;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-color: #af2f44;
+  box-shadow: none;
+}
+
+label {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.form-control {
+  font-size: 27px;
+  color: #1c756f;
+  text-transform: uppercase;
+  border: 1px solid #d1d1d1;
+  border-radius: 3px;
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #1c756f;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #1c756f;
+  }
+
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: #1c756f;
+  }
+
+  &:focus {
+    color: #1c756f;
+    box-shadow: none;
+    border-color: #d1d1d1;
+  }
+}

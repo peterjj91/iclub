@@ -1,13 +1,9 @@
 
-$(document).ready(function() {
-    $('select').selectpicker();
-});
-
 $('#fullpage').fullpage({
     autoScrolling: true,
     scrollOverflow: true,
     // scrollHorizontally: true,
-    menu: '.menu',
+    menu: '.scroll-menu',
     anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', '5thpage', '6thpage', '7thpage', '8thpage', '9thpage', '10thpage'],
 });
 
@@ -111,6 +107,12 @@ $(".procedure__person__man").hover(function(){
     $(".procedure__person__girl").css("filter", "blur(0px)");
 });
 
+$(".offer-promo__tab").hover(function(){
+    $(".section__big").css("filter", "blur(5px)");
+}, function(){
+    $(".section__big").css("filter", "blur(0px)");
+});
+
 $(".procedure__person__girl").hover(function(){
     $(".procedure__person__man").css("filter", "blur(5px)");
 }, function(){
@@ -123,6 +125,7 @@ var depi2 = document.getElementById('depi2');
 var depi3 = document.getElementById('request__slogan');
 var depi4 = document.getElementById('certificate__logo1');
 var depi5 = document.getElementById('certificate__logo2');
+var depi6 = document.getElementById('review__img');
 
 var parallax = new Parallax(scene);
 var parallaxDepi1 = new Parallax(depi1);
@@ -130,6 +133,7 @@ var parallaxDepi2 = new Parallax(depi2);
 var parallaxDepi3 = new Parallax(depi3);
 var parallaxDepi4 = new Parallax(depi4);
 var parallaxDepi5 = new Parallax(depi5);
+var parallaxDepi6 = new Parallax(depi6);
 
 $('.roundabout-carousel').roundabout({
     minScale: 0.5,

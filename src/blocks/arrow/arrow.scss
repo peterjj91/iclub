@@ -1,0 +1,56 @@
+// В этом файле должны быть стили для БЭМ-блока arrow, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.arrow {
+
+  $block-name:                &; // #{$block-name}__element {}
+  opacity: 1;
+  width: 15px;
+  height: 8px;
+  position: relative;
+  //position: absolute;
+  //left: 50%;
+  //top: 50%;
+  //transform-origin: 50% 50%;
+  //transform: translate3d(-50%, -50%, 0);
+
+  &:before,
+  &:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 10px;
+  }
+
+  &:before {
+    transform: rotate(-45deg) translateX(0);
+  }
+
+  &:after {
+    transform: rotate(45deg) translateX(0%);
+    left: 7px;
+  }
+
+  &.active {
+    &:before, &:after {
+      top: 0;
+    }
+
+    &:before {
+      transform: rotate(45deg) translateX(0%);
+      transform-origin: top left;
+      left: 1px;
+    }
+
+    &:after {
+      transform: rotate(-45deg) translateX(0%);
+      transform-origin: top right;
+      left: 4px;
+    }
+  }
+}

@@ -90,7 +90,7 @@ $border-radius:               3px !default;
     font-size: 23px;
     letter-spacing: 1.2px;
     border-radius: 50px;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     color: $color-main;
 
     &:focus, &.focus {
@@ -147,6 +147,51 @@ $border-radius:               3px !default;
     }
   }
 
+  &-animate {
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    transition: border-color 0.3s, background-color 0.3s;
+    transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      color: white;
+      transform: translate3d(0, 25%, 0);
+      padding: 12px 10px 7px 10px;
+      transition: transform 0.5s, opacity 0.5s;
+      transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1);
+    }
+
+    &:hover {
+      background-color: #1c756f;
+
+      &:after {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+
+      span {
+        opacity: 0;
+        transform: translate3d(0, -25%, 0);
+      }
+    }
+
+    span {
+      padding: 12px 10px 7px 10px;
+      display: block;
+      height: 100%;
+      transition: transform 0.5s, opacity 0.35s;
+      transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1);
+    }
+  }
+
   &-toMini {
     transition: all 1s;
 
@@ -169,7 +214,7 @@ $border-radius:               3px !default;
 
   button {
     width: 100%;
-    background: #8e44ad;
+    background: #b03247;
     border: none;
     border-radius: 50px;
     //padding: 5px 0;
@@ -195,7 +240,7 @@ $border-radius:               3px !default;
     bottom: 0;
     right: 0;
     width: 0%;
-    background: #8e44ad;
+    background: #b03247;
     border-radius: 50px;
   }
 
@@ -240,10 +285,7 @@ $border-radius:               3px !default;
 }
 
 .button-wrapper.success button .fa {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
   transform: scale(1);
-  -webkit-transition: .3s all ease .3s;
   transition: .3s all ease .3s;
 }
 

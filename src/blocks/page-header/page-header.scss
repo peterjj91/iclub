@@ -5,11 +5,11 @@
 .page-header {
   $block-name: &;
   position: absolute;
+  z-index: -1;
   height: 200px;
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 1;
   padding-top: 21px;
   padding-bottom: 21px;
   padding-left: 20px;

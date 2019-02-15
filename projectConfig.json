@@ -16,7 +16,6 @@
     "close": [],
     "modal": [],
     "dropdown": [],
-    "bootstrap-select": [],
     "navbar": [],
     "main-promo": [],
     "slider-promo": [],
@@ -36,13 +35,13 @@
     "about": [],
     "review": [],
     "contact": [],
-    "revealator": []
+    "revealator": [],
+    "arrow": []
   },
   "addCssBefore": [
     "./src/scss/variables.scss",
     "./node_modules/bootstrap/scss/bootstrap.scss",
     "./src/blocks/fancybox/fancybox.scss",
-    "./node_modules/bootstrap-select/sass/bootstrap-select.scss",
     "./src/blocks/slick/slick.scss"
   ],
   "addCssAfter": [],
@@ -63,7 +62,6 @@
     "./src/js/fm.revealator.jquery.min.js",
     "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
     "./node_modules/slick-carousel/slick/slick.min.js",
-    "./node_modules/bootstrap-select/dist/js/bootstrap-select.min.js",
     "./node_modules/parallax-js/dist/parallax.min.js",
     "./src/js/jquery.roundabout.min.js",
     "./src/js/countdown.js"

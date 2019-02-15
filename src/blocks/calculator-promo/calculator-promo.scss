@@ -47,18 +47,33 @@
         background-color: #e8e7e9;
         color: $color-main;
 
-        span {
+        .arrow {
+          @extend .active;
           display: inline-block;
           vertical-align: middle;
+          margin-left: 10px;
+          margin-top: -1px;
 
-          &:after {
-            content: "";
-            display: inline-block;
-            background-image: url(../img/drop-mini.png);
-            width: 16px;
-            height: 16px;
-            margin-left: 20px;
-            vertical-align: middle;
+          &:before, &:after {
+            background: $color-main;
+          }
+        }
+
+        &[aria-expanded="true"] {
+
+          .arrow {
+            transform: scale(-1);
+            //@extend .active;
+            //margin-top: 10px;
+            //
+            //&:before {
+            //  transform: rotate(-45deg) translateX(0);
+            //}
+            //
+            //&:after {
+            //  transform: rotate(45deg) translateX(0%);
+            //  left: 7px;
+            //}
           }
         }
       }

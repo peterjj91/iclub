@@ -3,9 +3,9 @@
   <div class="page-footer__inner">
     <div class="page-footer__map">
       <ul class="page-footer__nav">
-        <li><a href="#">название филиала </a></li>
-        <li><a href="#">название филиала </a></li>
-        <li><a href="#">название филиала </a></li>
+        <li><a href="#" class="btn btn-animate" data-text="название филиала"><span>название филиала</span></a></li>
+        <li><a href="#" class="btn btn-animate" data-text="название филиала"><span>название филиала</span></a></li>
+        <li><a href="#" class="btn btn-animate" data-text="название филиала"><span>название филиала</span></a></li>
       </ul>
 
       <iframe class="page-footer__map__frame" src="https://yandex.ru/map-widget/v1/-/CSSXuet" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>
@@ -40,16 +40,16 @@
       <div class="page-footer__line"></div>
 
       <div class="page-footer__form">
-        <div class="request__form">
+        <form class="request__form">
           <div class="form-row">
             <div class="col-24">
-              <input class="form-control form-control-lg" type="text" placeholder="введите имя*">
+              <input class="form-control form-control-lg" type="text" placeholder="введите имя*" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="col-24">
-              <input class="form-control form-control-lg" type="text" placeholder="телефон*">
+              <input class="form-control form-control-lg" type="number" placeholder="телефон*" required>
             </div>
           </div>
 
@@ -71,14 +71,14 @@
           <div class="form-row">
             <div class="form-group">
               <div class="custom-control custom-checkbox ">
-                <input type="checkbox" class="custom-control-input" id="footer-agree">
+                <input type="checkbox" class="custom-control-input" id="footer-agree" required>
                 <label class="custom-control-label" for="footer-agree">
                   Нажав на кнопку «заказать обратный звонок» Вы соглашаетесь с условиями публичной оферты и с условиями Политики обработки персональных данных
                 </label>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
 
       <ul class="page-footer__social">

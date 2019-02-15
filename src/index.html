@@ -7,62 +7,64 @@
   @@include('_include/page_head.html')
 </head>
 <body>
-<ul class="menu">
-  <li data-menuanchor="firstPage" class="active">
-    <a href="#firstPage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="secondPage">
-    <a href="#secondPage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="3rdPage">
-    <a href="#3rdPage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="4thpage">
-    <a href="#4thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="5thpage">
-    <a href="#5thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="6thpage">
-    <a href="#6thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="7thpage">
-    <a href="#7thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="8thpage">
-    <a href="#8thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="9thpage">
-    <a href="#9thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-  <li data-menuanchor="10thpage">
-    <a href="#10thpage">
-      <img src="img/pointer-bottom.png" alt="">
-    </a>
-  </li>
-</ul>
-<div class="page__content" id="fullpage">
-  <section class="section" data-relative-input="true" id="screen1">
-    @@include('blocks/page-header/page-header.html')
+<div class="scroll-menu">
+  <ul class="menu">
+    <li data-menuanchor="firstPage" class="active">
+      <a href="#firstPage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="secondPage">
+      <a href="#secondPage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="3rdPage">
+      <a href="#3rdPage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="4thpage">
+      <a href="#4thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="5thpage">
+      <a href="#5thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="6thpage">
+      <a href="#6thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="7thpage">
+      <a href="#7thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="8thpage">
+      <a href="#8thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="9thpage">
+      <a href="#9thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+    <li data-menuanchor="10thpage">
+      <a href="#10thpage">
+        <img src="img/pointer-bottom.png" alt="">
+      </a>
+    </li>
+  </ul>
 
+  @@include('blocks/page-header/page-header.html')
+</div>
+<div class="page__content" id="fullpage">
+  <section class="section" id="screen1">
     <div class="container">
       @@include('blocks/main-promo/main-promo.html')
     </div>
@@ -134,7 +136,7 @@
                             <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                           </div>
                           <div class="procedure__info__total">
-                            <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                            <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                             <p>Оставьте заявку, чтобы успеть получить скидку</p>
                           </div>
                         </div>
@@ -152,7 +154,7 @@
                   </div>
 
                   <div class="timer__btn">
-                    <button class="btn btn-primary"><span>оставить заявку</span></button>
+                    <a href="#6thpage" class="btn btn-primary"><span>оставить заявку</span></a>
 
                     <p>оставьте заявку, что бы  успеть получить  скидку! </p>
                   </div>
@@ -224,7 +226,7 @@
                           <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                         </div>
                         <div class="procedure__info__total">
-                          <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                          <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                           <p>Оставьте заявку, чтобы успеть получить скидку</p>
                         </div>
                       </div>
@@ -242,7 +244,7 @@
                 </div>
 
                 <div class="timer__btn">
-                  <button class="btn btn-primary"><span>оставить заявку</span></button>
+                  <a href="#6thpage" class="btn btn-primary"><span>оставить заявку</span></a>
 
                   <p>оставьте заявку, что бы  успеть получить  скидку! </p>
                 </div>
@@ -270,9 +272,10 @@
 
         <div class="offer-promo__tab">
           <div class="offer-promo__nav">
-            <div class="offer-promo__nav__num offerMultiOne"
+            <div class="offer-promo__nav__num offerMultiOne show"
                  id="offer-promo__nav1"
-                 data-parent=".offer-promo__nav">
+                 data-parent=".offer-promo__nav"
+                 aria-labelledby="offerHeadingOne">
               <div class="circle circle--big">
                 <div class="circle__wrapper">
                   <div class="circle__block">1</div>
@@ -281,7 +284,8 @@
             </div>
             <div class="offer-promo__nav__num offerMultiTwo"
                  id="offer-promo__nav2"
-                 data-parent=".offer-promo__nav">
+                 data-parent=".offer-promo__nav"
+                 aria-labelledby="offerHeadingTwo">
               <div class="circle circle--big">
                 <div class="circle__wrapper">
                   <div class="circle__block">2</div>
@@ -457,7 +461,7 @@
                           data-target=".offerMultiOne"
                           aria-expanded="true"
                           aria-controls="offerCollapseOne offer-promo-img1 offer-promo__nav1">
-                    без боли
+                    без боли <span class="arrow"></span>
                   </button>
                 </div>
                 <div id="offerCollapseOne"
@@ -477,7 +481,7 @@
                           data-target=".offerMultiTwo"
                           aria-expanded="false"
                           aria-controls="offerCollapseTwo offer-promo-img2 offer-promo__nav2">
-                    навсегда
+                    навсегда <span class="arrow"></span>
                   </button>
                 </div>
                 <div id="offerCollapseTwo"
@@ -499,7 +503,7 @@
                           data-target=".offerMultiThree"
                           aria-expanded="false"
                           aria-controls="offerCollapseThree offer-promo-img3 offer-promo__nav3">
-                    безопасно
+                    безопасно <span class="arrow"></span>
                   </button>
                 </div>
                 <div id="offerCollapseThree"
@@ -521,7 +525,7 @@
                           data-target=".offerMultiFour"
                           aria-expanded="false"
                           aria-controls="offerCollapseFour offer-promo-img4 offer-promo__nav4">
-                    Доступно
+                    Доступно <span class="arrow"></span>
                   </button>
                 </div>
                 <div id="offerCollapseFour"
@@ -538,14 +542,6 @@
             </div>
           </div>
         </div>
-
-        <!--<div class="dropdown-main" tabindex="1">Иван Иванов-->
-          <!--<ul class="dropdown">-->
-            <!--<li><a href="#"><i class="icon-user"></i>Профиль</a></li>-->
-            <!--<li><a href="#"><i class="icon-cog"></i>Настройки</a></li>-->
-            <!--<li><a href="#"><i class="icon-remove"></i>Выйти</a></li>-->
-          <!--</ul>-->
-        <!--</div>-->
       </div>
     </div>
   </section>
@@ -566,7 +562,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -593,7 +589,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -613,7 +609,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -633,7 +629,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -646,7 +642,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -676,7 +672,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -703,7 +699,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -716,7 +712,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -743,7 +739,7 @@
                   <p>Lorem ipsum dolor sit amet, <mark>consectetur</mark> adipisicing elit. Enim, quaerat!</p>
                 </div>
                 <div class="procedure__info__total">
-                  <a href="#" class="btn btn-primary"><span>Оставить заявку</span></a>
+                  <a href="#6thpage" class="btn btn-primary"><span>Оставить заявку</span></a>
                   <p>Оставьте заявку, чтобы успеть получить скидку</p>
                 </div>
               </div>
@@ -771,7 +767,7 @@
         <div class="calculator-promo__main">
           <div class="calculator-promo__main__header">
             <button class="btn" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-              Выберите одну или нескольлко услуг из списка<span class=""></span>
+              Выберите одну или нескольлко услуг из списка <span class="arrow"></span>
             </button>
           </div>
 
@@ -780,7 +776,7 @@
               <div class="calculator-promo__main__body__header">
                 <div class="calculator-promo__main__body__header__block">
                   <div class="custom-control custom-checkbox ">
-                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <input type="radio" name="selectPerson" class="custom-control-input" id="customCheck1">
                     <label class="custom-control-label" for="customCheck1">
                       зоны для  мужчин
                     </label>
@@ -789,7 +785,7 @@
 
                 <div class="calculator-promo__main__body__header__block">
                   <div class="custom-control custom-checkbox ">
-                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                    <input type="radio" name="selectPerson" class="custom-control-input" id="customCheck2">
                     <label class="custom-control-label" for="customCheck2">
                       зоны для  женщин
                     </label>
@@ -1025,13 +1021,13 @@
         <form class="request__form">
           <div class="form-row">
             <div class="col-24">
-              <input class="form-control form-control-lg" type="text" placeholder="введите имя*">
+              <input class="form-control form-control-lg" type="text" placeholder="введите имя*" required>
             </div>
           </div>
 
           <div class="form-row">
             <div class="col-24">
-              <input class="form-control form-control-lg" type="text" placeholder="телефон*">
+              <input class="form-control form-control-lg" type="number" placeholder="телефон*" required>
             </div>
           </div>
 
@@ -1044,7 +1040,7 @@
           <div class="form-row">
             <div class="form-group">
               <div class="custom-control custom-checkbox ">
-                <input type="checkbox" class="custom-control-input" id="agree">
+                <input type="checkbox" class="custom-control-input" id="agree" required>
                 <label class="custom-control-label" for="agree">
                   Нажав на кнопку «заказать обратный звонок» Вы соглашаетесь с условиями публичной оферты и с условиями Политики обработки персональных данных
                 </label>
@@ -1486,6 +1482,10 @@
   </section>
   <section class="section" id="screen9">
     <div class="review">
+      <div class="review__img" id="review__img">
+        <div class="review__img__block layer" data-depth="0.90"></div>
+      </div>
+
       <div class="review__title">отзывы наших клиентов</div>
 
       <div class="review__slider">

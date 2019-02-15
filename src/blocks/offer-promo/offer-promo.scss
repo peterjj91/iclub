@@ -34,7 +34,7 @@
 
   &__tab {
     padding: 25px 16px 27px 69px;
-    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.82);
+    box-shadow: -1px -1px 4px 0px rgba(0, 0, 0, 0.5);
     background-color: #fff;
     display: flex;
     position: relative;
@@ -79,27 +79,49 @@
       display: block !important;
       margin-bottom: 26px;
       transition: none !important;
+      //height: 115px;
 
       &:last-child {
         margin-bottom: 0;
       }
 
       .circle {
-        &__block {
+        //transition: none;
 
+        &__wrapper {
+          //transition: none;
+        }
+        &__block {
+          //transition: none;
         }
       }
 
-      &.show, &.collapsing {
-        .circle {
-          &__block {
-            font-size: 43px;
-          }
+      .circle {
+        &__block {
+          font-size: 43px;
+          background-color: #D7D0D1;
+          color: white;
+        }
 
+        &__wrapper {
+          width: 52px;
+          height: 52px;
+          padding: 0;
+          border-color: #D7D0D1;
+        }
+      }
+
+      &.show {
+        .circle {
           &__wrapper {
-            width: 52px;
-            height: 52px;
-            padding: 0;
+            width: 115px;
+            height: 115px;
+            padding: 16px;
+            border-color: #015a51;
+          }
+          &__block {
+            background-color: #015a51;
+            font-size: 63px;
           }
         }
       }

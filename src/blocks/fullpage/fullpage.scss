@@ -25,6 +25,10 @@
     @media(min-width: $screen-xxl) {
       background-position: center left;
     }
+
+    &:hover {
+      transition: all 200ms;
+    }
   }
 }
 
@@ -33,7 +37,7 @@
 }
 
 #screen4 {
-  background-image: url(img/background-shadow.png);
+  background-image: url(../img/background-shadow.png);
   background-color: white;
   background-repeat: no-repeat;
   background-position: right center;
@@ -59,18 +63,18 @@
 #screen9 {
   background-color: #e8e4e5;
   position: relative;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-image: url("../img/background-review.png");
-    background-position: bottom center;
-    z-index: -1;
-    height: 403px;
-  }
+  //
+  //&:before {
+  //  content: '';
+  //  position: absolute;
+  //  top: 0;
+  //  left: 0;
+  //  width: 100%;
+  //  background-image: url("../img/background-review.png");
+  //  background-position: bottom center;
+  //  z-index: -1;
+  //  height: 403px;
+  //}
 }
 
 #screen10 {
@@ -132,6 +136,11 @@
 
   li {
     display: none;
+    transition: all 300ms;
+
+    &:hover {
+      transform: scale(0.85);
+    }
 
     &.active {
       & + li {
@@ -143,13 +152,33 @@
 
 .main-promo {
   @extend .toLeftStart;
+
+  &__title {
+    transition: all 600ms;
+    transform: translate(-200px, 0);
+    opacity: 0;
+  }
+}
+.offer-promo {
+  &__title {
+    @extend .toLeftStart;
+  }
 }
 .slider-promo {
   @extend .toLeftStart;
 }
 .fp-viewing-firstPage {
+  .page-header {
+    z-index: 1;
+  }
+
   .main-promo {
     @extend .toLeftEnd;
+
+    &__title {
+      transform: translate(0,0);
+      opacity: 1;
+    }
   }
 }
 .fp-viewing-secondPage {
@@ -157,7 +186,21 @@
     @extend .toLeftEnd;
   }
 }
+.fp-viewing-3rdPage {
+  .offer-promo {
+    &__title {
+      @extend .toLeftEnd;
+    }
+  }
+}
+.fp-viewing-4thpage {
 
+}
+.fp-viewing-5thpage {
+  .menu {
+    display: none;
+  }
+}
 .fp-viewing-6thpage {
   .request__img--right {
     @extend .toLeftEnd;
@@ -167,7 +210,15 @@
     @extend .toRightEnd;
   }
 }
+.fp-viewing-7thpage {
 
+}
+.fp-viewing-8thpage {
+
+}
+.fp-viewing-9thpage {
+
+}
 .fp-viewing-10thpage {
   .page-footer {
     &__map {

@@ -166,6 +166,7 @@
     width: 100%;
     height: 39px;
     z-index: 1;
+    display: none;
 
     .dropdown-main {
       width: 100%;
@@ -242,6 +243,14 @@
         button {
           background-color: #1e7d77;
         }
+      }
+    }
+  }
+
+  &.slick-initialized {
+    .slider-person {
+      &__info {
+        display: block;
       }
     }
   }

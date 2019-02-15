@@ -4825,6 +4825,8 @@ html,
 body {
   height: 100%;
   min-width: 1050px; }
+.slider-person__info {
+  z-index: -1; }
 .section {
   z-index: 1; }
 .section .container, .section .page-header__container {
@@ -4858,7 +4860,8 @@ body {
   background-color: white; }
 #screen9 {
   background-color: #e8e4e5;
-  position: relative; }
+  position: relative;
+  overflow: hidden; }
 #screen10 {
   background-color: white;
   position: relative; }
@@ -4903,7 +4906,7 @@ body {
 .menu li:hover {
       -webkit-transform: scale(0.85);
               transform: scale(0.85); }
-.menu li.active + li, .menu .accordion .card .card-header .btn.collapsed li.arrow + li, .accordion .card .card-header .btn.collapsed .menu li.arrow + li, .menu .calculator-promo__main__header .btn li.arrow + li, .calculator-promo__main__header .btn .menu li.arrow + li {
+.menu li.active, .menu .accordion .card .card-header .btn.collapsed li.arrow, .accordion .card .card-header .btn.collapsed .menu li.arrow, .menu .calculator-promo__main__header .btn li.arrow, .calculator-promo__main__header .btn .menu li.arrow {
       display: block; }
 .main-promo__title {
   -webkit-transition: all 600ms;
@@ -4923,6 +4926,9 @@ body {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 1; }
+.fp-viewing-10thpage .menu li {
+  -webkit-transform: scale(-1);
+          transform: scale(-1); }
 .page__main-content {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
@@ -5015,6 +5021,8 @@ h3, .head-h3 {
         line-height: 31px; }
 .page-footer__nav li a:hover, .page-footer__nav li a:focus {
           text-decoration: none; }
+.page-footer__nav li a:hover.btn-animate:after, .page-footer__nav li a:focus.btn-animate:after {
+            color: white; }
 .page-footer__title {
     font-size: 50px;
     line-height: 50px;
@@ -5238,7 +5246,6 @@ h3, .head-h3 {
       top: 0;
       left: 0;
       opacity: 0;
-      color: white;
       -webkit-transform: translate3d(0, 25%, 0);
               transform: translate3d(0, 25%, 0);
       padding: 12px 10px 7px 10px;
@@ -5248,16 +5255,14 @@ h3, .head-h3 {
       transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
       -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1);
               transition-timing-function: cubic-bezier(0.2, 1, 0.5, 1); }
-.btn-animate:hover {
-      background-color: #1c756f; }
 .btn-animate:hover:after {
-        opacity: 1;
-        -webkit-transform: translate3d(0, 0, 0);
-                transform: translate3d(0, 0, 0); }
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0); }
 .btn-animate:hover span {
-        opacity: 0;
-        -webkit-transform: translate3d(0, -25%, 0);
-                transform: translate3d(0, -25%, 0); }
+      opacity: 0;
+      -webkit-transform: translate3d(0, -25%, 0);
+              transform: translate3d(0, -25%, 0); }
 .btn-animate span {
       padding: 12px 10px 7px 10px;
       display: block;
@@ -5698,6 +5703,10 @@ label {
         color: #af2f44;
         padding-bottom: 0px;
         border-bottom: 2px solid #af2f44; }
+.navbar-nav li.active .nav-link:hover:after, .navbar-nav .accordion .card .card-header .btn.collapsed li.arrow .nav-link:hover:after, .accordion .card .card-header .btn.collapsed .navbar-nav li.arrow .nav-link:hover:after, .navbar-nav .calculator-promo__main__header .btn li.arrow .nav-link:hover:after, .calculator-promo__main__header .btn .navbar-nav li.arrow .nav-link:hover:after {
+          color: #af2f44; }
+.navbar-nav li .nav-link:hover:after {
+        color: #015a51; }
 .navbar-collapse {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -5836,7 +5845,8 @@ label {
   left: 0px;
   width: 100%;
   height: 39px;
-  z-index: 1; }
+  z-index: 1;
+  display: none; }
 .slider-person__info .dropdown-main {
     width: 100%;
     background-color: #1e7d77;
@@ -5892,6 +5902,8 @@ label {
               box-shadow: none; }
 .slider-person .slick-dots li.slick-active button {
       background-color: #1e7d77; }
+.slider-person.slick-initialized .slider-person__info {
+  display: block; }
 .slider-people__block {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -8538,9 +8550,10 @@ label {
     pointer-events: none; }
 .offer-promo__nav__num {
       display: block !important;
-      margin-bottom: 26px;
+      margin-bottom: 0;
       -webkit-transition: none !important;
-      transition: none !important; }
+      transition: none !important;
+      height: 115px; }
 .offer-promo__nav__num:last-child {
         margin-bottom: 0; }
 .offer-promo__nav__num .circle__block {
@@ -8921,9 +8934,6 @@ label {
       -webkit-transition: all 300ms;
       transition: all 300ms; }
 .procedure__info__description--toLeft {
-        -webkit-transform: translate(100px, 0);
-                transform: translate(100px, 0); }
-.procedure__info__description--toLeft {
         -webkit-transform: translate(-100px, 0);
                 transform: translate(-100px, 0); }
 .procedure__info__description p {
@@ -8956,12 +8966,18 @@ label {
           -webkit-transform: translate(0, 0);
                   transform: translate(0, 0);
           opacity: 1;
-          left: -318px; }
+          left: -339px; }
+.procedure__info.active .procedure__info__description--toLeft .procedure__info__price, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description--toLeft .procedure__info__price, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description--toLeft .procedure__info__price {
+            padding-right: 30px; }
+.procedure__info.active .procedure__info__description--toLeft .procedure__info__small, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description--toLeft .procedure__info__small, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description--toLeft .procedure__info__small {
+            padding-right: 30px; }
 .procedure__info.active .procedure__info__description--toRight, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description--toRight, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description--toRight {
           -webkit-transform: translate(0, 0);
                   transform: translate(0, 0);
-          opacity: 1;
-          left: 150px; }
+          opacity: 1; }
+.procedure__info.active .procedure__info__description--toRight .procedure__info__small:before, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description--toRight .procedure__info__small:before, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description--toRight .procedure__info__small:before {
+            -webkit-transition: none;
+            transition: none; }
 .procedure__info.active .procedure__info__description p, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description p, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description p {
           display: block; }
 .procedure__info.active .procedure__info__price, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__price, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__price {
@@ -9000,12 +9016,18 @@ label {
 .procedure__info--1 .procedure__info__description {
         top: -84px;
         left: 19px; }
+.procedure__info--1.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--1.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--1.arrow .procedure__info__description {
+        -webkit-transform: translate(83px, 20px);
+                transform: translate(83px, 20px); }
 .procedure__info--2 {
       top: 217px;
       left: 115px; }
 .procedure__info--2 .procedure__info__description {
         left: -4px;
         top: 56px; }
+.procedure__info--2.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--2.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--2.arrow .procedure__info__description {
+        -webkit-transform: translate(106px, -118px);
+                transform: translate(106px, -118px); }
 .procedure__info--3 {
       left: 327px;
       top: 247px; }
@@ -9017,8 +9039,11 @@ label {
         display: inline-block;
         vertical-align: middle; }
 .procedure__info--3 .procedure__info__description {
-        top: -11px;
-        left: 106px; }
+        top: -17px;
+        left: 104px; }
+.procedure__info--3.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--3.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--3.arrow .procedure__info__description {
+        -webkit-transform: translate(-2px, -45px);
+                transform: translate(-2px, -45px); }
 .procedure__info--4 {
       left: 329px;
       bottom: 313px;
@@ -9031,6 +9056,9 @@ label {
 .procedure__info--4 .procedure__info__description {
         left: 104px;
         top: -7px; }
+.procedure__info--4.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--4.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--4.arrow .procedure__info__description {
+        -webkit-transform: translate(-2px, -53px);
+                transform: translate(-2px, -53px); }
 .procedure__info--5 {
       bottom: 174px;
       left: 197px;
@@ -9043,30 +9071,43 @@ label {
 .procedure__info--5 .procedure__info__description {
         left: -86px;
         top: -13px; }
+.procedure__info--5.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--5.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--5.arrow .procedure__info__description {
+        -webkit-transform: translate(188px, -49px);
+                transform: translate(188px, -49px); }
 .procedure__info--10 {
       bottom: 547px;
       left: 158px; }
 .procedure__info--10 .procedure__info__description {
         top: -76px;
         left: 59px; }
+.procedure__info--10.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--10.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--10.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, 12px);
+                transform: translate(0px, 12px); }
 .procedure__info--11 {
       top: 294px;
       left: 40px;
       padding-top: 59px; }
 .procedure__info--11 .procedure__info__description {
         top: -1px; }
+.procedure__info--11.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--11.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--11.arrow .procedure__info__description {
+        top: -5px; }
 .procedure__info--12 {
       left: 379px;
       bottom: 426px; }
 .procedure__info--12 .procedure__info__description {
         left: 160px;
         top: -69px; }
+.procedure__info--12.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--12.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--12.arrow .procedure__info__description {
+        top: -64px; }
 .procedure__info--13 {
       bottom: 180px;
       left: 47px; }
 .procedure__info--13 .procedure__info__description {
         top: 48px;
         left: 58px; }
+.procedure__info--13.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--13.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--13.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -109px);
+                transform: translate(0px, -109px); }
 .calculator-promo__info {
   max-width: 1100px;
   margin: 0 auto;
@@ -9250,7 +9291,10 @@ label {
       -ms-flex: 0 0 50%;
           flex: 0 0 50%;
   padding-top: 20px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
+.certificate__block--first {
+    z-index: 2; }
 .certificate__block--second {
     background-color: #1c756f; }
 .certificate__block--second .certificate__title {
@@ -9389,7 +9433,8 @@ label {
 .certificate__logo {
   position: absolute;
   top: 130px;
-  left: 0%; }
+  left: 0%;
+  z-index: -1; }
 .certificate .btn-primary {
   background-color: white !important;
   color: #1c756f;

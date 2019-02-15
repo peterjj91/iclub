@@ -116,6 +116,10 @@
 
         &:hover, &:focus {
           text-decoration: none;
+
+          &.btn-animate:after {
+            color: white;
+          }
         }
       }
     }

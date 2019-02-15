@@ -4,6 +4,10 @@
 
 @import url("../../node_modules/fullpage.js/dist/fullpage.css");
 
+.slider-person__info {
+  z-index: -1;
+}
+
 .section {
   z-index: 1;
 
@@ -63,6 +67,7 @@
 #screen9 {
   background-color: #e8e4e5;
   position: relative;
+  overflow: hidden;
   //
   //&:before {
   //  content: '';
@@ -143,8 +148,10 @@
     }
 
     &.active {
+      display: block;
+
       & + li {
-        display: block;
+        //display: block;
       }
     }
   }
@@ -225,5 +232,9 @@
       transform: translate(0, 0);
       opacity: 1;
     }
+  }
+
+  .menu li {
+    transform: scale(-1);
   }
 }

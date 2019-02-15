@@ -18,12 +18,15 @@
     flex: 0 0 50%;
     padding-top: 20px;
     position: relative;
+    z-index: 1;
 
     @media(min-width: $screen-xl) {
       padding-top: 32px;
     }
 
     &--first {
+      z-index: 2;
+
       #{$block-name} {
         &__description {
 
@@ -311,6 +314,7 @@
     position: absolute;
     top: 130px;
     left: 0%;
+    z-index: -1;
   }
 
   .btn-primary {

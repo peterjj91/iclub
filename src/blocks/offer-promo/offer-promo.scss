@@ -77,23 +77,13 @@
 
     &__num {
       display: block !important;
-      margin-bottom: 26px;
+      //margin-bottom: 26px;
+      margin-bottom: 0;
       transition: none !important;
-      //height: 115px;
+      height: 115px;
 
       &:last-child {
         margin-bottom: 0;
-      }
-
-      .circle {
-        //transition: none;
-
-        &__wrapper {
-          //transition: none;
-        }
-        &__block {
-          //transition: none;
-        }
       }
 
       .circle {

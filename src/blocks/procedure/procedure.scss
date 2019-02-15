@@ -216,8 +216,8 @@
       margin-left: -35px;
       transition: all 300ms;
 
-      &--toLeft {
-        transform: translate(100px, 0);
+      &--toRight {
+        //transform: translate(100px, 0);
       }
 
       &--toLeft {
@@ -263,13 +263,36 @@
           &--toLeft {
             transform: translate(0, 0);
             opacity: 1;
-            left: -318px;
+            left: -339px;
+
+            #{$block-name} {
+              &__info {
+                &__price {
+                  padding-right: 30px;
+                }
+                &__small {
+                  padding-right: 30px;
+                }
+              }
+            }
           }
 
           &--toRight {
             transform: translate(0, 0);
             opacity: 1;
-            left: 150px;
+
+            #{$block-name} {
+              &__info {
+                &__price {
+
+                }
+                &__small {
+                  &:before {
+                    transition: none;
+                  }
+                }
+              }
+            }
           }
 
           p {
@@ -357,7 +380,7 @@
       &.active {
         .procedure__info {
           &__description {
-
+            transform: translate(83px, 20px);
           }
         }
       }
@@ -379,7 +402,7 @@
       &.active {
         .procedure__info {
           &__description {
-
+            transform: translate(106px, -118px);
           }
         }
       }
@@ -388,8 +411,6 @@
     &--3 {
       left: 327px;
       top: 247px;
-      //display: flex;
-      //align-items: center;
 
       .procedure__info {
         &__circle {
@@ -404,8 +425,16 @@
         }
 
         &__description {
-          top: -11px;
-          left: 106px;
+          top: -17px;
+          left: 104px;
+        }
+      }
+
+      &.active {
+        .procedure__info {
+          &__description {
+            transform: translate(-2px, -45px);
+          }
         }
       }
     }
@@ -422,6 +451,14 @@
           top: -7px;
         }
       }
+
+      &.active {
+        .procedure__info {
+          &__description {
+            transform: translate(-2px, -53px);
+          }
+        }
+      }
     }
 
     &--5 {
@@ -434,6 +471,14 @@
         &__description {
           left: -86px;
           top: -13px;
+        }
+      }
+
+      &.active {
+        .procedure__info {
+          &__description {
+            transform: translate(188px, -49px);
+          }
         }
       }
     }
@@ -454,7 +499,7 @@
       &.active {
         .procedure__info {
           &__description {
-
+            transform: translate(0px, 12px);
           }
         }
       }
@@ -477,7 +522,7 @@
         .procedure {
           &__info {
             &__description {
-              //left: -174px;
+              top: -5px;
             }
           }
         }
@@ -498,7 +543,7 @@
       &.active {
         .procedure__info {
           &__description {
-            //left: -400px;
+            top: -64px;
           }
         }
       }
@@ -512,6 +557,14 @@
         &__description {
           top: 48px;
           left: 58px;
+        }
+      }
+
+      &.active {
+        .procedure__info {
+          &__description {
+            transform: translate(0px, -109px);
+          }
         }
       }
     }

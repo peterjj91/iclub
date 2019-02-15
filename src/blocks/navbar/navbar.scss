@@ -64,6 +64,20 @@
           color: $color-main--accent;
           padding-bottom: 0px;
           border-bottom: 2px solid $color-main--accent;
+
+          &:hover {
+            &:after {
+              color: $color-main--accent;
+            }
+          }
+        }
+      }
+
+      .nav-link {
+        &:hover {
+          &:after {
+            color: #015a51;
+          }
         }
       }
     }

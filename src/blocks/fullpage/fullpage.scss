@@ -154,8 +154,7 @@
   transform: translate(-50%, 0%);
   bottom: 50px;
   left: 50%;
-  z-index: 0;
-  z-index: -1;
+  z-index: 1;
 
   li {
     display: none;
@@ -194,12 +193,7 @@
 }
 .fp-viewing-firstPage {
   .page-header {
-    z-index: 1;
-  }
-
-  .menu {
-    z-index: 1;
-    opacity: 1;
+    display: block;
   }
 
   .main-promo {

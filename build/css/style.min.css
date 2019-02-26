@@ -4901,8 +4901,7 @@ body {
           transform: translate(-50%, 0%);
   bottom: 50px;
   left: 50%;
-  z-index: 0;
-  z-index: -1; }
+  z-index: 1; }
 .menu li {
     display: none;
     -webkit-transition: all 300ms;
@@ -4919,10 +4918,7 @@ body {
           transform: translate(-200px, 0);
   opacity: 0; }
 .fp-viewing-firstPage .page-header {
-  z-index: 1; }
-.fp-viewing-firstPage .menu {
-  z-index: 1;
-  opacity: 1; }
+  display: block; }
 .fp-viewing-firstPage .main-promo__title {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
@@ -4959,7 +4955,7 @@ h3, .head-h3 {
   font-weight: 100; }
 .page-header {
   position: absolute;
-  z-index: -1;
+  display: none;
   height: 200px;
   top: 0px;
   left: 0px;

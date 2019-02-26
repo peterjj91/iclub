@@ -76,6 +76,8 @@
 
       .nav-link {
         white-space: nowrap;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
 
         &:hover {
           color: $color-main--accent;

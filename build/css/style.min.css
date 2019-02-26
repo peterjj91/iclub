@@ -4888,6 +4888,8 @@ body {
   z-index: -1; }
 .paralax__img img {
     width: 150%; }
+.paralax--main .paralax__img {
+    margin-top: 0 !important; }
 .paralax--promo {
     z-index: 1;
     pointer-events: none; }
@@ -13094,8 +13096,6 @@ label {
   .text-xl-center {
     text-align: center !important; } }
 @media (min-width: 1240px) {
-    .paralax--main {
-      height: auto; }
       .page-footer__content {
         padding-left: 112px; }
           .page-footer__nav li a {
@@ -13135,6 +13135,9 @@ label {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; } }
+@media (min-width: 1300px) {
+    .paralax--main {
+      height: auto; } }
 @media (min-width: 1500px) {
     .page__footer-wrapper {
       padding: 20px 20px;

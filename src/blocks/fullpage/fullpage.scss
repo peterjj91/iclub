@@ -124,11 +124,17 @@
   }
 
   &--main {
-    @media(min-width: $screen-xl) {
+    @media(min-width: 1300px) {
       //bottom: 0px;
       //top: 0px;
       //position: absolute;
       height: auto;
+    }
+
+    .paralax__img {
+      // @media(min-width: $screen-xl) {
+        margin-top: 0 !important;
+      // }
     }
   }
 

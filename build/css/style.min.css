@@ -4888,6 +4888,8 @@ body {
   z-index: -1; }
 .paralax__img img {
     width: 105%; }
+.paralax--main {
+    display: none !important; }
 .paralax--promo {
     z-index: 1;
     pointer-events: none; }
@@ -4923,6 +4925,8 @@ body {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 1; }
+.fp-viewing-firstPage .paralax--main {
+  display: block !important; }
 .fp-viewing-5thpage .menu {
   display: none; }
 .fp-viewing-10thpage .page-footer__map {

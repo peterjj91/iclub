@@ -125,6 +125,8 @@
   }
 
   &--main {
+    display: none !important;
+
     @media(min-width: 1300px) {
       //bottom: 0px;
       //top: 0px;
@@ -203,6 +205,10 @@
       transform: translate(0,0);
       opacity: 1;
     }
+  }
+
+  .paralax--main {
+    display: block !important;
   }
 }
 .fp-viewing-secondPage {

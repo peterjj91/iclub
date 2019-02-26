@@ -4827,8 +4827,6 @@ body {
   min-width: 1200px; }
 .slider-person__info {
   z-index: -1; }
-.fp-scrollable {
-  height: auto !important; }
 .section {
   z-index: 1;
   overflow: hidden; }

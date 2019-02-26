@@ -4887,8 +4887,6 @@ body {
   top: 0px;
   pointer-events: none;
   z-index: -1; }
-.paralax__img img {
-    width: 105%; }
 .paralax--main {
     display: none !important; }
 .paralax--promo {
@@ -4961,6 +4959,7 @@ h3, .head-h3 {
 .page-header {
   position: absolute;
   display: none;
+  z-index: 1;
   height: 200px;
   top: 0px;
   left: 0px;

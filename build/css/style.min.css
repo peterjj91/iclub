@@ -4887,9 +4887,8 @@ body {
   pointer-events: none;
   z-index: -1; }
 .paralax__img img {
-    width: 150%; }
-.paralax--main .paralax__img {
-    margin-top: 0 !important; }
+    width: 150%;
+    width: 105%; }
 .paralax--promo {
     z-index: 1;
     pointer-events: none; }
@@ -13135,9 +13134,6 @@ label {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center; } }
-@media (min-width: 1300px) {
-    .paralax--main {
-      height: auto; } }
 @media (min-width: 1500px) {
     .page__footer-wrapper {
       padding: 20px 20px;

@@ -204,11 +204,17 @@
   }
 
   &__img {
-    height: 525px;
+    //height: 525px;
     position: relative;
+    padding-bottom: 90%;
+    overflow: hidden;
 
     img {
-      width: 100%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      height: 100%;
     }
   }
 

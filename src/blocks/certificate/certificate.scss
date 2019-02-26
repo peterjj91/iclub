@@ -5,13 +5,16 @@
 .certificate {
 
   $block-name:                &; // #{$block-name}__element {}
-
+  height: 100%;
 
   @media(min-width: $screen-xl) {
     display: flex;
   }
 
   &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #fff;
     text-align: center;
     //flex: 1;
@@ -22,6 +25,10 @@
 
     @media(min-width: $screen-xl) {
       padding-top: 32px;
+    }
+
+    &__cell {
+      width: 100%;
     }
 
     &--first {

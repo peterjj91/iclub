@@ -149,6 +149,7 @@
   &--promo {
     z-index: 1;
     pointer-events: none;
+    opacity: 0;
   }
 }
 
@@ -214,6 +215,10 @@
 
   .paralax--main {
     display: block !important;
+  }
+
+  .paralax--promo {
+    opacity: 1;
   }
 }
 .fp-viewing-secondPage {

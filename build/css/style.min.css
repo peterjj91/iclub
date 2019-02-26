@@ -4895,7 +4895,8 @@ body {
     display: none !important; }
 .paralax--promo {
     z-index: 1;
-    pointer-events: none; }
+    pointer-events: none;
+    opacity: 0; }
 .menu {
   position: fixed;
   padding: 0;
@@ -4930,6 +4931,8 @@ body {
   opacity: 1; }
 .fp-viewing-firstPage .paralax--main {
   display: block !important; }
+.fp-viewing-firstPage .paralax--promo {
+  opacity: 1; }
 .fp-viewing-5thpage .menu {
   display: none; }
 .fp-viewing-10thpage .page-footer__map {

@@ -222,6 +222,7 @@
 
       &--toLeft {
         transform: translate(-100px, 0);
+        transition: all 400ms ease-in-out;
       }
 
       p {

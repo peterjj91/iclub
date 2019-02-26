@@ -5,6 +5,7 @@
 .about {
 
   $block-name: &; // #{$block-name}__element {}
+  overflow: hidden;
 
   &:before {
     content: '';
@@ -16,6 +17,7 @@
     background-image: url("../img/background-about1.png");
     background-repeat: no-repeat;
     background-size: cover;
+    pointer-events: none;
   }
 
   &__block {
@@ -24,8 +26,8 @@
     @media(min-width: $screen-lg){
       width: 50%;
       display: inline-block;
-      vertical-align: top;
-      padding: 27px 50px;
+      vertical-align: middle;
+      padding: 5px 50px;
     }
 
     &__wrapper {

@@ -26,6 +26,11 @@
 
   &__container {
     @extend .container;
+
+    @media(max-width: $screen-lg) {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 
   &__inner {

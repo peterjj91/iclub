@@ -5890,9 +5890,14 @@ label {
       background-repeat: no-repeat;
       background-position: center; }
 .slider-person__info .dropdown-main .dropdown {
-      padding-left: 23px; }
+      padding-left: 30px;
+      padding-right: 30px;
+      color: black; }
 .slider-person__info .dropdown-main.active, .slider-person__info .accordion .card .card-header .btn.collapsed .dropdown-main.arrow, .accordion .card .card-header .btn.collapsed .slider-person__info .dropdown-main.arrow, .slider-person__info .calculator-promo__main__header .btn .dropdown-main.arrow, .calculator-promo__main__header .btn .slider-person__info .dropdown-main.arrow {
       background-color: #1e7d77; }
+.slider-person__info .dropdown-main.active .dropdown, .slider-person__info .accordion .card .card-header .btn.collapsed .dropdown-main.arrow .dropdown, .accordion .card .card-header .btn.collapsed .slider-person__info .dropdown-main.arrow .dropdown, .slider-person__info .calculator-promo__main__header .btn .dropdown-main.arrow .dropdown, .calculator-promo__main__header .btn .slider-person__info .dropdown-main.arrow .dropdown {
+        padding-top: 10px;
+        padding-bottom: 10px; }
 .slider-person__img {
   position: relative;
   padding-bottom: 90%;
@@ -9313,7 +9318,10 @@ label {
 .request__slogan small {
       font-size: 27px; }
 .certificate {
-  height: 100%; }
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 .certificate__block {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -12366,6 +12374,9 @@ label {
         display: inline-block;
         vertical-align: middle;
         padding: 5px 50px; } }
+@media screen and (min-width: 1200px) {
+  body, html {
+    overflow: hidden !important; } }
 @media (min-width: 1200px) {
     .container, .page-header__container {
       max-width: 1140px; }
@@ -13250,7 +13261,13 @@ label {
 @media (max-width: 1050px) {
     .container, .page-header__container {
       padding-left: 20px;
-      padding-right: 20px; } }
+      padding-right: 20px; }
+    .page-header__container {
+      padding-left: 0;
+      padding-right: 0; } }
+@media screen and (max-width: 1200px) {
+  body, html {
+    overflow: scroll; } }
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;

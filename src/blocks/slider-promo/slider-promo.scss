@@ -194,11 +194,18 @@
       }
 
       .dropdown {
-        padding-left: 23px;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: black;
       }
 
       &.active {
         background-color: #1e7d77;
+
+        .dropdown {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
       }
     }
   }

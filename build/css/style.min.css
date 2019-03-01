@@ -8827,12 +8827,7 @@ label {
     font-size: 100px;
     color: #015a51;
     text-align: center;
-    position: absolute;
-    -webkit-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
-    top: 0px;
-    left: 50%;
-    z-index: 2; }
+    margin: 0 auto; }
 .procedure__person {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -8846,6 +8841,8 @@ label {
     background-repeat: no-repeat;
     background-position: bottom center;
     position: relative; }
+.procedure__person__box {
+      position: relative; }
 .procedure__person__block {
       position: relative; }
 .procedure__person__block.active .procedure__info--1, .accordion .card .card-header .btn.collapsed .procedure__person__block.arrow .procedure__info--1, .calculator-promo__main__header .btn .procedure__person__block.arrow .procedure__info--1 {
@@ -8860,7 +8857,16 @@ label {
         bottom: 426px; }
 .procedure__person__block.active .procedure__info--13, .accordion .card .card-header .btn.collapsed .procedure__person__block.arrow .procedure__info--13, .calculator-promo__main__header .btn .procedure__person__block.arrow .procedure__info--13 {
         left: 200px; }
+.procedure__person__block--man .procedure__person__box {
+        width: 513px;
+        height: 805px; }
+.procedure__person__block--girl .procedure__person__box {
+        width: 513px;
+        height: 805px; }
 .procedure__person__girl {
+      position: absolute;
+      top: 0px;
+      left: 0px;
       background-image: url("../img/girl-back.png");
       background-repeat: no-repeat;
       background-position: bottom;
@@ -8869,15 +8875,20 @@ label {
 .procedure__person__girl--front {
         background-image: url("../img/girl-front.png"); }
 .procedure__person__man {
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
       background-image: url("../img/man-front.png");
       background-repeat: no-repeat;
-      width: 620px;
+      width: 750px;
       height: 920px;
-      background-position: -195px bottom; }
+      background-position: bottom center;
+      left: -180px; }
 .procedure__person__man--back {
         background-image: url("../img/man-back.png");
         width: 620px;
-        background-position: center bottom; }
+        background-position: center bottom;
+        left: 0px; }
 .procedure__person__back {
       position: absolute;
       -webkit-transform: translate(-50%, 0%);
@@ -8889,7 +8900,7 @@ label {
 .procedure__person__back--girl {
         margin-left: 125px; }
 .procedure__person__back--man {
-        margin-left: 90px; }
+        margin-left: 150px; }
 .procedure__info {
     position: absolute;
     z-index: 1;
@@ -8898,6 +8909,7 @@ label {
     -webkit-transition: all 300ms;
     transition: all 300ms; }
 .procedure__info__text {
+      width: 100%;
       font-family: "akrobat-regular";
       white-space: nowrap; }
 .procedure__info__text mark {
@@ -8910,9 +8922,16 @@ label {
       line-height: 37px;
       margin-bottom: 1px;
       white-space: nowrap; }
+.procedure__info__price a {
+        color: #015a51; }
+.procedure__info__price a:hover, .procedure__info__price a:focus {
+          color: #015a51;
+          text-decoration: none; }
 .procedure__info__small {
       margin-bottom: 7px;
-      font-size: 15px; }
+      font-size: 15px;
+      -webkit-transition: all 400ms ease-in-out;
+      transition: all 400ms ease-in-out; }
 .procedure__info__small a {
         color: #015a51; }
 .procedure__info__small a:hover, .procedure__info__small a:focus {
@@ -8925,8 +8944,6 @@ label {
         left: 0;
         width: 0;
         height: 1px;
-        -webkit-transition: all 300ms;
-        transition: all 300ms;
         background-color: #015a51; }
 .procedure__info__circle {
       z-index: 1;
@@ -8955,6 +8972,9 @@ label {
               padding: 12px; }
 .procedure__info__circle .circle:hover .circle__block, .procedure__info__circle .circle.active .circle__block, .procedure__info__circle .accordion .card .card-header .btn.collapsed .circle.arrow .circle__block, .accordion .card .card-header .btn.collapsed .procedure__info__circle .circle.arrow .circle__block, .procedure__info__circle .calculator-promo__main__header .btn .circle.arrow .circle__block, .calculator-promo__main__header .btn .procedure__info__circle .circle.arrow .circle__block {
               background-color: #015a51; }
+.procedure__info__hidden {
+      display: none;
+      background-color: white; }
 .procedure__info__description {
       position: absolute;
       left: 0;
@@ -8964,6 +8984,9 @@ label {
       margin-left: -35px;
       -webkit-transition: all 300ms;
       transition: all 300ms; }
+.procedure__info__description--toRight {
+        -webkit-transform: translate(100px, 0);
+                transform: translate(100px, 0); }
 .procedure__info__description--toLeft {
         -webkit-transform: translate(-100px, 0);
                 transform: translate(-100px, 0);
@@ -8972,6 +8995,50 @@ label {
 .procedure__info__description p {
         display: none;
         margin: 0; }
+.procedure__info__list {
+      height: 0;
+      overflow: hidden;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      -webkit-transition: all 400ms ease-in-out;
+      transition: all 400ms ease-in-out; }
+.procedure__info__list li {
+        position: relative;
+        overflow: hidden;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        font-size: 20px;
+        margin-bottom: 10px;
+        -webkit-transition: all 400ms ease-in-out;
+        transition: all 400ms ease-in-out; }
+.procedure__info__list li:before {
+          content: "";
+          position: absolute;
+          bottom: 3px;
+          left: 0;
+          width: 0%;
+          height: 0px;
+          background: rgba(0, 0, 0, 0.3);
+          z-index: 0;
+          -webkit-transition: all 610ms ease-in-out;
+          transition: all 610ms ease-in-out; }
+.procedure__info__list li:last-child {
+          margin-bottom: 0; }
+.procedure__info__list span {
+        -webkit-transition: all 600ms ease-in-out;
+        transition: all 600ms ease-in-out;
+        background-color: transparent;
+        z-index: 0;
+        opacity: 0; }
+.procedure__info__list__title {
+        padding-right: 5px; }
+.procedure__info__list__price {
+        padding-left: 5px; }
 .procedure__info__total {
       display: none;
       margin-top: 17px;
@@ -9013,6 +9080,16 @@ label {
             transition: none; }
 .procedure__info.active .procedure__info__description p, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__description p, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__description p {
           display: block; }
+.procedure__info.active .procedure__info__hidden, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__hidden, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__hidden {
+        display: block; }
+.procedure__info.active .procedure__info__list, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__list, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__list {
+        height: auto; }
+.procedure__info.active .procedure__info__list li:before, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__list li:before, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__list li:before {
+          width: 100%;
+          height: 1px; }
+.procedure__info.active .procedure__info__list span, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__list span, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__list span {
+          opacity: 1;
+          background-color: white; }
 .procedure__info.active .procedure__info__price, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__price, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__price {
         margin-bottom: 8px; }
 .procedure__info.active .procedure__info__small, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__small, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__small {
@@ -9043,56 +9120,66 @@ label {
           padding: 12px; }
 .procedure__info.active .procedure__info__circle .circle__block, .accordion .card .card-header .btn.collapsed .procedure__info.arrow .procedure__info__circle .circle__block, .calculator-promo__main__header .btn .procedure__info.arrow .procedure__info__circle .circle__block {
           background-color: #015a51; }
-.procedure__info--1 {
-      top: 33px;
-      left: 300px; }
-.procedure__info--1 .procedure__info__description {
-        top: -84px;
-        left: 19px; }
-.procedure__info--1.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--1.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--1.arrow .procedure__info__description {
-        -webkit-transform: translate(83px, 20px);
-                transform: translate(83px, 20px); }
-.procedure__info--2 {
-      top: 217px;
-      left: 115px; }
-.procedure__info--2 .procedure__info__description {
-        left: -4px;
-        top: 56px; }
-.procedure__info--2.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--2.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--2.arrow .procedure__info__description {
-        -webkit-transform: translate(106px, -118px);
-                transform: translate(106px, -118px); }
-.procedure__info--3 {
-      left: 327px;
-      top: 247px; }
-.procedure__info--3 .procedure__info__circle {
+.procedure__info--girl-1 {
+      top: 10px;
+      left: 215px; }
+.procedure__info--girl-1 .procedure__info__description {
+        top: -10px;
+        left: 10px; }
+.procedure__info--girl-1.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-1.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-1.arrow .procedure__info__description {
+        -webkit-transform: translate(92px, -53px);
+                transform: translate(92px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-1, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-1, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-1 {
+        display: none; }
+.procedure__info--girl-2 {
+      top: 120px;
+      left: 297px; }
+.procedure__info--girl-2 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-2.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-2.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-2.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -53px);
+                transform: translate(101px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-2, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-2, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-2 {
+        display: none; }
+.procedure__info--girl-3 {
+      left: 70px;
+      bottom: 530px; }
+.procedure__info--girl-3 .procedure__info__circle {
         display: inline-block;
         vertical-align: middle;
         margin-right: 6px; }
-.procedure__info--3 .procedure__info__text {
+.procedure__info--girl-3 .procedure__info__text {
         display: inline-block;
         vertical-align: middle; }
-.procedure__info--3 .procedure__info__description {
-        top: -17px;
-        left: 104px; }
-.procedure__info--3.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--3.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--3.arrow .procedure__info__description {
-        -webkit-transform: translate(-2px, -45px);
-                transform: translate(-2px, -45px); }
-.procedure__info--4 {
-      left: 329px;
-      bottom: 313px;
+.procedure__info--girl-3 .procedure__info__description {
+        top: 60px;
+        left: -70px; }
+.procedure__info--girl-3.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-3.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-3.arrow .procedure__info__description {
+        left: 0px;
+        top: -10px;
+        -webkit-transform: translate(101px, -53px);
+                transform: translate(101px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-3, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-3, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-3 {
+        display: none; }
+.procedure__info--girl-4 {
+      left: 290px;
+      bottom: 372px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-.procedure__info--4 .procedure__info__description {
-        left: 104px;
-        top: -7px; }
-.procedure__info--4.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--4.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--4.arrow .procedure__info__description {
-        -webkit-transform: translate(-2px, -53px);
-                transform: translate(-2px, -53px); }
-.procedure__info--5 {
+.procedure__info--girl-4 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-4.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-4.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-4.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -53px);
+                transform: translate(101px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-4, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-4, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-4 {
+        display: none; }
+.procedure__info--girl-5 {
       bottom: 174px;
       left: 197px;
       display: -webkit-box;
@@ -9101,46 +9188,202 @@ label {
       -webkit-box-align: center;
           -ms-flex-align: center;
               align-items: center; }
-.procedure__info--5 .procedure__info__description {
-        left: -86px;
-        top: -13px; }
-.procedure__info--5.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--5.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--5.arrow .procedure__info__description {
-        -webkit-transform: translate(188px, -49px);
-                transform: translate(188px, -49px); }
-.procedure__info--10 {
-      bottom: 547px;
-      left: 158px; }
-.procedure__info--10 .procedure__info__description {
-        top: -76px;
-        left: 59px; }
-.procedure__info--10.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--10.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--10.arrow .procedure__info__description {
-        -webkit-transform: translate(0px, 12px);
-                transform: translate(0px, 12px); }
-.procedure__info--11 {
-      top: 294px;
-      left: 40px;
-      padding-top: 59px; }
-.procedure__info--11 .procedure__info__description {
-        top: -1px; }
-.procedure__info--11.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--11.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--11.arrow .procedure__info__description {
-        top: -5px; }
-.procedure__info--12 {
-      left: 379px;
-      bottom: 426px; }
-.procedure__info--12 .procedure__info__description {
-        left: 160px;
-        top: -69px; }
-.procedure__info--12.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--12.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--12.arrow .procedure__info__description {
-        top: -64px; }
-.procedure__info--13 {
-      bottom: 180px;
-      left: 47px; }
-.procedure__info--13 .procedure__info__description {
-        top: 48px;
-        left: 58px; }
-.procedure__info--13.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--13.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--13.arrow .procedure__info__description {
-        -webkit-transform: translate(0px, -109px);
-                transform: translate(0px, -109px); }
+.procedure__info--girl-5 .procedure__info__description {
+        left: -270px;
+        top: -10px; }
+.procedure__info--girl-5.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-5.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-5.arrow .procedure__info__description {
+        left: 0px;
+        -webkit-transform: translate(101px, -100px);
+                transform: translate(101px, -100px); }
+.procedure__person__block--girl.active .procedure__info--girl-5, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-5, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-5 {
+        display: none; }
+.procedure__info--girl-6 {
+      bottom: 100px;
+      left: 310px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+.procedure__info--girl-6 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-6.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-6.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-6.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -80%);
+                transform: translate(101px, -80%);
+        left: 0px; }
+.procedure__person__block--girl.active .procedure__info--girl-6, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-6, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-6 {
+        display: none; }
+.procedure__info--girl-7 {
+      display: none;
+      bottom: 500px;
+      left: 250px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+.procedure__info--girl-7 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-7.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-7.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-7.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -53px);
+                transform: translate(101px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-7, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-7, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-7 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--girl-8 {
+      display: none;
+      bottom: 330px;
+      left: 220px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+.procedure__info--girl-8 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-8.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-8.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-8.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -53px);
+                transform: translate(101px, -53px); }
+.procedure__person__block--girl.active .procedure__info--girl-8, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-8, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-8 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--girl-9 {
+      display: none;
+      bottom: 200px;
+      left: 200px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+.procedure__info--girl-9 .procedure__info__description {
+        left: 0px;
+        top: -10px; }
+.procedure__info--girl-9.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--girl-9.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--girl-9.arrow .procedure__info__description {
+        -webkit-transform: translate(101px, -80%);
+                transform: translate(101px, -80%); }
+.procedure__person__block--girl.active .procedure__info--girl-9, .accordion .card .card-header .btn.collapsed .procedure__person__block--girl.arrow .procedure__info--girl-9, .calculator-promo__main__header .btn .procedure__person__block--girl.arrow .procedure__info--girl-9 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-1 {
+      display: none;
+      bottom: 670px;
+      left: 60px; }
+.procedure__info--man-1 .procedure__info__description {
+        top: -10px;
+        left: -90px; }
+.procedure__info--man-1.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-1.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-1.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-1, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-1, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-1 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-2 {
+      display: none;
+      bottom: 600px;
+      left: 200px; }
+.procedure__info--man-2 .procedure__info__description {
+        top: -10px;
+        left: 200px; }
+.procedure__info--man-2.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-2.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-2.arrow .procedure__info__description {
+        -webkit-transform: translate(-100px, -53px);
+                transform: translate(-100px, -53px);
+        left: 200px; }
+.procedure__person__block--man.active .procedure__info--man-2, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-2, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-2 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-3 {
+      display: none;
+      left: 140px;
+      bottom: 400px; }
+.procedure__info--man-3 .procedure__info__description {
+        left: -60px;
+        top: -10px; }
+.procedure__info--man-3.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-3.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-3.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-3, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-3, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-3 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-4 {
+      display: none;
+      bottom: 290px;
+      left: 350px; }
+.procedure__info--man-4 .procedure__info__description {
+        top: -10px;
+        left: 200px; }
+.procedure__info--man-4.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-4.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-4.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-4, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-4, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-4 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-5 {
+      display: none;
+      bottom: 190px;
+      left: 150px; }
+.procedure__info--man-5 .procedure__info__description {
+        top: -10px;
+        left: -70px; }
+.procedure__info--man-5.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-5.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-5.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -80%);
+                transform: translate(0px, -80%); }
+.procedure__person__block--man.active .procedure__info--man-5, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-5, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-5 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-6 {
+      display: none;
+      bottom: 100px;
+      left: 140px; }
+.procedure__info--man-6 .procedure__info__description {
+        top: -10px;
+        left: -20px; }
+.procedure__info--man-6.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-6.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-6.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -80%);
+                transform: translate(0px, -80%); }
+.procedure__person__block--man.active .procedure__info--man-6, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-6, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-6 {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+.procedure__info--man-7 {
+      bottom: 520px;
+      left: 145px; }
+.procedure__info--man-7 .procedure__info__description {
+        top: -10px;
+        left: -120px; }
+.procedure__info--man-7.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-7.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-7.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-7, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-7, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-7 {
+        display: none; }
+.procedure__info--man-8 {
+      bottom: 350px;
+      left: 280px; }
+.procedure__info--man-8 .procedure__info__description {
+        top: -10px;
+        left: 200px; }
+.procedure__info--man-8.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-8.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-8.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-8, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-8, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-8 {
+        display: none; }
+.procedure__info--man-9 {
+      bottom: 220px;
+      left: 160px; }
+.procedure__info--man-9 .procedure__info__description {
+        top: -10px;
+        left: -60px; }
+.procedure__info--man-9.active .procedure__info__description, .accordion .card .card-header .btn.collapsed .procedure__info--man-9.arrow .procedure__info__description, .calculator-promo__main__header .btn .procedure__info--man-9.arrow .procedure__info__description {
+        -webkit-transform: translate(0px, -53px);
+                transform: translate(0px, -53px); }
+.procedure__person__block--man.active .procedure__info--man-9, .accordion .card .card-header .btn.collapsed .procedure__person__block--man.arrow .procedure__info--man-9, .calculator-promo__main__header .btn .procedure__person__block--man.arrow .procedure__info--man-9 {
+        display: none; }
 .calculator-promo__info {
   max-width: 1100px;
   margin: 0 auto;
@@ -12374,9 +12617,6 @@ label {
         display: inline-block;
         vertical-align: middle;
         padding: 5px 50px; } }
-@media screen and (min-width: 1200px) {
-  body, html {
-    overflow: hidden !important; } }
 @media (min-width: 1200px) {
     .container, .page-header__container {
       max-width: 1140px; }
@@ -13265,9 +13505,6 @@ label {
     .page-header__container {
       padding-left: 0;
       padding-right: 0; } }
-@media screen and (max-width: 1200px) {
-  body, html {
-    overflow: scroll; } }
 @media (max-width: 575.98px) {
   .table-responsive-sm {
     display: block;

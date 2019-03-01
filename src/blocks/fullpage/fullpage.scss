@@ -13,10 +13,10 @@
 }
 
 @media screen and (min-width: 1200px) { 
-  body,html { overflow: hidden !important; }
+  // body,html { overflow: hidden !important; }
 }
 @media screen and (max-width: 1200px) {
-  body,html { overflow: scroll; }
+  // body,html { overflow: scroll; }
   // .section { display: inline-block; height: auto !important; }
   // .fp-tableCell { display: inline-block; margin: 0 auto; }
 }
